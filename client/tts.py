@@ -617,11 +617,11 @@ class GoogleMplayerTTS(AbstractTTSEngine):
             cmd = ['/usr/bin/mplayer', '-ao', 'alsa:device=hw=1,0', '-really-quiet', '-noconsolecontrols'
                 'http://translate.google.com/translate_tts?tl=' + self.language + '&q="' + text + '"']
             with tempfile.TemporaryFile() as f:
-            subprocess.call(cmd, stdout=f, stderr=f)
-            f.seek(0)
-            output = f.read()
-            if output:
-                self._logger.debug("Output was: '%s'", output)
+                subprocess.call(cmd, stdout=f, stderr=f)
+                f.seek(0)
+                output = f.read()
+                if output:
+                    self._logger.debug("Output was: '%s'", output)
 
 
 def get_default_engine_slug():
