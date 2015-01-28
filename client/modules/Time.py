@@ -22,7 +22,11 @@ def handle(text, mic, profile):
     now = datetime.datetime.now(tz=tz)
     service = DateService()
     response = service.convertTime(now)
-    mic.say("It is %s right now." % response)
+
+    comment = ''
+    if now.hour > 19:
+        comment = ' It is time to be sleeping.'
+    mic.say("It is {0} right now. {1}".format(response, comment) )
 
 
 def isValid(text):
