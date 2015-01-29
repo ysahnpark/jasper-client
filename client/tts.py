@@ -616,7 +616,9 @@ class GoogleMplayerTTS(AbstractTTSEngine):
 
             cmd = ['/usr/bin/mplayer', '-ao', 'alsa:device=hw=1,0', '-really-quiet', '-noconsolecontrols', 
                 'http://translate.google.com/translate_tts?tl=' + self.language + '&q="' + text + '"']
-            print(' '.join(cmd)) 
+            #print(' '.join(cmd)) 
+            print('Saying: ' + text) 
+
             with tempfile.TemporaryFile() as f:
                 subprocess.call(cmd, stdout=f, stderr=f)
                 f.seek(0)

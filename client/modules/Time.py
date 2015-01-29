@@ -24,6 +24,7 @@ def handle(text, mic, profile):
     response = service.convertTime(now)
 
     comment = ''
+    print("Current hour is " + str(now.hour))
     if now.hour > 19:
         comment = ' It is time to be sleeping.'
     mic.say("It is {0} right now. {1}".format(response, comment) )

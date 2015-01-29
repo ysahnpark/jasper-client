@@ -14,7 +14,7 @@ def segment_text(text, maxchars = 100):
     segment_char_cnt = 0;
     for char in text:
 
-        if char in ' \t\n':
+        if char in '.!?;:,~\n':
             last_blank_pos = cursor
 
         curr_len = cursor - next_start_pos + 1
